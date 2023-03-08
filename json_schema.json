@@ -1,0 +1,276 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "CoordinateSystemEPSG": {
+      "type": "string"
+    },
+    "convert_CRS": {
+      "type": "boolean"
+    },
+    "CRS_Input": {
+      "type": "string"
+    },
+    "CRS_Output": {
+      "type": "string"
+    },
+    "analyzePhotos": {
+      "type": "object",
+      "properties": {
+        "image_quality_threshold": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "image_quality_threshold"
+      ]
+    },
+    "align": {
+      "type": "object",
+      "properties": {
+        "align_accuracy": {
+          "type": "integer"
+        },
+        "generic_preselection": {
+          "type": "boolean"
+        },
+        "mask_tiepoints": {
+          "type": "boolean"
+        },
+        "reference_preselection": {
+          "type": "boolean"
+        },
+        "keypoint_limit": {
+          "type": "integer"
+        },
+        "tiepoint_limit": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "align_accuracy",
+        "generic_preselection",
+        "mask_tiepoints",
+        "reference_preselection",
+        "keypoint_limit",
+        "tiepoint_limit"
+      ]
+    },
+    "detectMarkers": {
+      "type": "object",
+      "properties": {
+        "target_type": {
+          "type": "string"
+        },
+        "tolerance": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "target_type",
+        "tolerance"
+      ]
+    },
+    "placeMarker": {
+      "type": "object",
+      "properties": {
+        "search_radius": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "search_radius"
+      ]
+    },
+    "optimizeCameras": {
+      "type": "object",
+      "properties": {
+        "fit_f": {
+          "type": "boolean"
+        },
+        "fit_cx": {
+          "type": "boolean"
+        },
+        "fit_cy": {
+          "type": "boolean"
+        },
+        "fit_b1": {
+          "type": "boolean"
+        },
+        "fit_b2": {
+          "type": "boolean"
+        },
+        "fit_k1": {
+          "type": "boolean"
+        },
+        "fit_k2": {
+          "type": "boolean"
+        },
+        "fit_k3": {
+          "type": "boolean"
+        },
+        "fit_k4": {
+          "type": "boolean"
+        },
+        "fit_p1": {
+          "type": "boolean"
+        },
+        "fit_p2": {
+          "type": "boolean"
+        },
+        "fit_corrections": {
+          "type": "boolean"
+        },
+        "adaptive_fitting": {
+          "type": "boolean"
+        },
+        "tiepoint_covariance": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "fit_f",
+        "fit_cx",
+        "fit_cy",
+        "fit_b1",
+        "fit_b2",
+        "fit_k1",
+        "fit_k2",
+        "fit_k3",
+        "fit_k4",
+        "fit_p1",
+        "fit_p2",
+        "fit_corrections",
+        "adaptive_fitting",
+        "tiepoint_covariance"
+      ]
+    },
+    "buildDepthMaps": {
+      "type": "object",
+      "properties": {
+        "depth_map_quality": {
+          "type": "integer"
+        },
+        "depth_filtering": {
+          "type": "string"
+        },
+        "reuse_depth": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "depth_map_quality",
+        "depth_filtering",
+        "reuse_depth"
+      ]
+    },
+    "buildModel": {
+      "type": "object"
+    },
+    "calibrateColors": {
+      "type": "object"
+    },
+    "buildUV": {
+      "type": "object"
+    },
+    "buldTexture": {
+      "type": "object"
+    },
+    "buildTileModel": {
+      "type": "object"
+    },
+    "buildDem": {
+      "type": "object"
+    },
+    "buildOrthomosaic": {
+      "type": "object"
+    },
+    "exportOrtho": {
+      "type": "object",
+      "properties": {
+        "image_format": {
+          "type": "string"
+        },
+        "block_height": {
+          "type": "integer"
+        },
+        "block_width": {
+          "type": "integer"
+        },
+        "image_compression": {
+          "type": "object",
+          "properties": {
+            "tiff_big": {
+              "type": "boolean"
+            },
+            "tiff_tiled": {
+              "type": "boolean"
+            },
+            "tiff_overviews": {
+              "type": "boolean"
+            },
+            "tiff_compression": {
+              "type": "integer"
+            },
+            "jpeg_quality": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "tiff_big",
+            "tiff_tiled",
+            "tiff_overviews",
+            "tiff_compression",
+            "jpeg_quality"
+          ]
+        }
+      },
+      "required": [
+        "image_format",
+        "block_height",
+        "block_width",
+        "image_compression"
+      ]
+    },
+    "exportDEM": {
+      "type": "object",
+      "properties": {
+        "image_format": {
+          "type": "string"
+        },
+        "source_data": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "image_format",
+        "source_data"
+      ]
+    },
+    "exportReport": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "CoordinateSystemEPSG",
+    "convert_CRS",
+    "CRS_Input",
+    "CRS_Output",
+    "analyzePhotos",
+    "align",
+    "detectMarkers",
+    "placeMarker",
+    "optimizeCameras",
+    "buildDepthMaps",
+    "buildModel",
+    "calibrateColors",
+    "buildUV",
+    "buldTexture",
+    "buildTileModel",
+    "buildDem",
+    "buildOrthomosaic",
+    "exportOrtho",
+    "exportDEM",
+    "exportReport"
+  ]
+}
